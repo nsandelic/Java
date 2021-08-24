@@ -1,0 +1,25 @@
+1
+P5567
+Janko
+Petrovic
+Visi predavac
+2
+P9878
+Ivica
+Zupan
+Profesor visoke škole
+3
+P1018
+Darko
+Milic
+Visi predavac
+4
+P8286
+Danica
+Despot
+Profesor visoke skole
+5
+P245
+Maric
+Zoran
+Asistent

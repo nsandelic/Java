@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.java.vjezbe.StudentiController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Profesori">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#prikaziPretraguProfesora" text="Pretraga" />
+                  <MenuItem mnemonicParsing="false" onAction="#prikaziUnosProfesora" text="Unos" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Studenti">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#prikaziPretraguStudenta" text="Pretraga" />
+                  <MenuItem mnemonicParsing="false" onAction="#prikaziUnosStudenta" text="Unos" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Predmeti">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#prikaziPretraguPredmeta" text="Pretraga" />
+                  <MenuItem mnemonicParsing="false" onAction="#prikaziUnosPredmeta" text="Unos" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Ispiti">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#prikaziPretraguIspita" text="Pretraga" />
+                  <MenuItem mnemonicParsing="false" onAction="#prikaziUnosIspita" text="Unos" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="93.0" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="123.0" minHeight="0.0" prefHeight="75.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="249.0" minHeight="10.0" prefHeight="249.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Pretraga studenta" GridPane.columnSpan="4" GridPane.halignment="CENTER">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label text="JMBAG" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Prezime" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="Ime" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="Datum rodjenja" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <DatePicker fx:id="datePicker" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <TextField fx:id="jmbagTextField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="prezimeTextField" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="imeTextField" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button fx:id="pretragaButton" mnemonicParsing="false" onMouseClicked="#filterStudent" text="Pretraga" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+            <TableView fx:id="tbl" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="6">
+              <columns>
+                <TableColumn fx:id="col_jmbag" prefWidth="77.0" text="JMBAG" />
+                <TableColumn fx:id="col_prezime" prefWidth="99.0" text="Prezime" />
+                  <TableColumn fx:id="col_ime" text="Ime" />
+                  <TableColumn fx:id="col_datum" prefWidth="138.0" text="Datum rodjenja" />
+              </columns>
+            </TableView>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
